@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head th:fragment="headstuff">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>Bullhorn with Bootstrap</title>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style> body {padding-bottom: 70px; }</style>
+
+</head>
+
+<body>
+
+<a href="/add"> Add a Message</a><br />
+
+<div class="container">
+
+    <div class="jumbotron" th:each="message : ${messages}">
+        <h1 th:text="${message.content}"></h1>
+        <p th:text="${message.sentby}"></p>
+    </div>
+
+</div>
+
+<!--<table>
+    <tr>
+        <th>Name</th>
+        <th>Posted Date</th>
+        <th>Message</th>
+    </tr>
+
+    <tr th:each="message : ${messages}">
+        <td th:text="${message.sentby}"></td>
+        <td th:text="${message.posteddate}"></td>
+        <td th:text="${message.content}"></td>
+    </tr>
+
+</table> -->
+
+</body>
+
+</html>
